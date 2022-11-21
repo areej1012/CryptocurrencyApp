@@ -1,6 +1,5 @@
-package com.example.cryptocurrencyapp.ui.theme
+package com.example.cryptocurrencyapp.presentation.ui.theme
 
-import android.R.id.primary
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
