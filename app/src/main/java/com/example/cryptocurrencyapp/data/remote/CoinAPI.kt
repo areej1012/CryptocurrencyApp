@@ -6,11 +6,11 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 
-interface coinAPI {
+interface CoinAPI {
 
     @GET("/v1/coins")
     suspend fun getCoins(): List<CoinDto>
 
     @GET("/v1/coins/{coinId}")
-    suspend fun getCoinById(@Path("coinId") coinId : String) : List<CoinDetailsDto>
+    suspend fun getCoinById(@Path("coinId") coinId : String) :CoinDetailsDto
 }
