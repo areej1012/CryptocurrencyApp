@@ -19,11 +19,11 @@ class GetCoinsDetailsUseCase @Inject constructor(
         try {
             // we want execute this use case now and get coins
             // and should display out progress
-            emit(Resource.Loading())
+            emit(Resource.Loading<CoinDetail>())
             val coins = repository.getCoinById(coinId).toCoinDetail()
-            emit(Resource.Success(coins))
+            emit(Resource.Success<CoinDetail>(coins))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
+            emit(Resource.Error<CoinDetail>(e.localizedMessage ?: "An unexpected error occurred"))
         } catch (e: IOException){
             emit(Resource.Error("Couldn't reach server, Check your internet connection"))
 
